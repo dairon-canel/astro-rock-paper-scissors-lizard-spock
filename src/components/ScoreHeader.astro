@@ -1,0 +1,30 @@
+---
+const { class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    className,
+    'h-[5.4rem] pl-[1.1rem] pr-[0.6rem] border-[0.2rem] flex justify-between items-center border-white rounded-lg border-header-outline',
+  ]}
+>
+  <img
+    src="/images/logo-bonus.svg"
+    alt="rock paper scissors lizard spock title"
+    class="h-[2.8rem]"
+  />
+  <div
+    class="bg-white flex w-[4.4rem] flex-col items-center h-[3.9rem] rounded-md"
+  >
+    <p
+      class="text-[0.55rem] tracking-[0.04rem] font-bold mt-[0.4rem] uppercase text-score-text"
+    >
+      score
+    </p>
+    <p
+      class="-mt-[0.65rem] text-[2.2rem] -tracking-[0.4rem] font-bold text-dark-text"
+    >
+      12
+    </p>
+  </div>
+</div>
