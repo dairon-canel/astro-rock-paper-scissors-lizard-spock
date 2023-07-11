@@ -29,10 +29,13 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="flex flex-col h-fit">
     <ScoreHeader class="m-7" />
     <slot />
-    <a>Rules</a>
+    <a
+      class="text-white border-2 pt-[0.4rem] pb-[0.3rem] border-header-outline uppercase self-center mb-[3.1rem] rounded-lg tracking-[0.06rem] px-[2rem]"
+      >Rules</a
+    >
   </body>
 </html>
 <style is:global>
