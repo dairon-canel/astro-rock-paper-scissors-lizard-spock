@@ -5,19 +5,31 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Frontend Mentor | Rock paper scissors lizard spock">
   <div data-multi-step>
-    <div data-step class="bg-image h-[20rem] relative">
-      <ChoiceButton color="yellow" icon="scissors" />
-      <ChoiceButton color="blue" icon="paper" />
-      <ChoiceButton color="red" icon="rock" class="absolute top-[15rem]" />
+    <div data-step class="bg-image h-[20rem] w-full relative">
+      <ChoiceButton
+        color="yellow"
+        icon="scissors"
+        class="absolute top-[3.5rem] left-[7.8rem]"
+      />
+      <ChoiceButton
+        color="blue"
+        icon="paper"
+        class="absolute top-[8.3rem] left-[13.75rem]"
+      />
+      <ChoiceButton
+        color="red"
+        icon="rock"
+        class="absolute top-[15.2rem] left-[11.35rem]"
+      />
       <ChoiceButton
         color="purple"
         icon="lizard"
-        class="absolute top-[15rem] left-[4rem]"
+        class="absolute top-[15.2rem] left-[4.15rem]"
       />
       <ChoiceButton
         color="cyan"
         icon="spock"
-        class="absolute top-[8rem] left-[4rem]"
+        class="absolute top-[8.3rem] left-[1.75rem]"
       />
     </div>
   </div>
