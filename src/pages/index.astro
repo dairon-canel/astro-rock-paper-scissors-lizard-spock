@@ -1,8 +1,33 @@
 ---
+import ChoiceButton from '../components/ChoiceButton.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Frontend Mentor | Rock paper scissors lizard spock">
-  TEST
-  <img src="/images/bg-pentagon.svg" alt="" />
+  <div data-multi-step>
+    <div data-step class="bg-image h-[20rem] relative">
+      <ChoiceButton color="yellow" icon="scissors" />
+      <ChoiceButton color="blue" icon="paper" />
+      <ChoiceButton color="red" icon="rock" class="absolute top-[15rem]" />
+      <ChoiceButton
+        color="purple"
+        icon="lizard"
+        class="absolute top-[15rem] left-[4rem]"
+      />
+      <ChoiceButton
+        color="cyan"
+        icon="spock"
+        class="absolute top-[8rem] left-[4rem]"
+      />
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .bg-image {
+    background-image: url(/images/bg-pentagon.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom 40px;
+    background-size: 13rem;
+  }
+</style>
