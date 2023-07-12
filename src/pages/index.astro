@@ -5,39 +5,81 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Frontend Mentor | Rock paper scissors lizard spock">
   <div data-multi-step>
-    <div data-step class="bg-image h-[27.5rem] w-full relative">
+    <!-- <div data-step class="bg-image h-[27.3rem] w-full relative">
       <ChoiceButton
         color="yellow"
         icon="scissors"
-        class="absolute top-[3.5rem] left-[7.8rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[3.5rem] left-[7.8rem]"
         iconPosition="46% 50%"
       />
       <ChoiceButton
         color="blue"
         icon="paper"
-        class="absolute top-[8.3rem] left-[13.75rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] left-[13.75rem]"
         iconPosition="49% 50%"
         iconSize="32px"
       />
       <ChoiceButton
         color="red"
         icon="rock"
-        class="absolute top-[15.2rem] left-[11.35rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[15.2rem] left-[11.35rem]"
         iconPosition="50% 51%"
       />
       <ChoiceButton
         color="purple"
         icon="lizard"
-        class="absolute top-[15.2rem] left-[4.15rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[15.2rem] left-[4.15rem]"
         iconSize="41px"
       />
       <ChoiceButton
         color="cyan"
         icon="spock"
-        class="absolute top-[8.3rem] left-[1.75rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] left-[1.75rem]"
         iconSize="30px"
         iconPosition="52% 50%"
       />
+    </div> -->
+    <!-- <div
+      data-step
+      class="h-[27.3rem] flex justify-around w-full relative pt-[3.68rem]"
+    >
+      <div class="flex flex-col items-center justify-between h-[9.83rem]">
+        <ChoiceButton
+          color="yellow"
+          icon="scissors"
+          class="h-[7.44rem] w-[7.44rem]"
+          iconPosition="46% 50%"
+          iconSize="35%"
+        />
+        <p class="uppercase text-white text-sm">You picked</p>
+      </div>
+      <div class="flex flex-col items-center justify-between h-[9.83rem]">
+        <span
+          class="mt-[0.6rem] h-[6.1rem] w-[6.1rem] rounded-full bg-black bg-opacity-10"
+        ></span>
+        <p class="uppercase text-white text-sm">The house picked</p>
+      </div>
+    </div> -->
+    <div
+      data-step
+      class="h-[27.3rem] flex justify-around w-full relative pt-[3.68rem]"
+    >
+      <div class="flex flex-col items-center justify-between h-[9.83rem]">
+        <ChoiceButton
+          color="yellow"
+          icon="scissors"
+          class="h-[7.44rem] w-[7.44rem]"
+          iconPosition="46% 50%"
+          iconSize="35%"
+        />
+        <p class="uppercase text-white text-sm">You picked</p>
+      </div>
+      <div class="flex flex-col items-center justify-between h-[9.83rem]">
+        <span
+          class="mt-[0.6rem] h-[6.1rem] w-[6.1rem] rounded-full bg-black bg-opacity-10"
+        ></span>
+        <p class="uppercase text-white text-sm">The house picked</p>
+      </div>
     </div>
   </div>
 </Layout>
