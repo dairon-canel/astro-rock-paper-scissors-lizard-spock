@@ -4,13 +4,17 @@ import { colors } from '../constants/colors';
 export interface Props {
   color: 'yellow' | 'blue' | 'red' | 'purple' | 'cyan';
   icon: 'scissors' | 'paper' | 'rock' | 'lizard' | 'spock';
+  iconSize?: string;
+  iconPosition?: string;
   class?: string;
 }
 
-const { class: className, color, icon } = Astro.props;
+const { class: className, color, icon, iconSize, iconPosition } = Astro.props;
 
 const buttonId = `button-${icon}`;
+
 const iconImage = `url(/images/icon-${icon}.svg)`;
+
 const colorFrom = colors[`${color}-from`];
 const colorTo = colors[`${color}-to`];
 ---
@@ -24,7 +28,15 @@ const colorTo = colors[`${color}-to`];
 >
 </button>
 
-<style define:vars={{ colorFrom, colorTo, iconImage }}>
+<style
+  define:vars={{
+    colorFrom,
+    colorTo,
+    iconImage,
+    iconSize: iconSize ?? '33px',
+    iconPosition: iconPosition ?? '50% 50%',
+  }}
+>
   .button-choice {
     position: relative;
     background: radial-gradient(
@@ -54,8 +66,8 @@ const colorTo = colors[`${color}-to`];
     content: '';
     background-image: var(--iconImage);
     background-repeat: no-repeat;
-    background-size: 33px;
-    background-position: 50% 50%;
+    background-size: var(--iconSize);
+    background-position: var(--iconPosition);
     left: 0%;
     top: 0%;
     width: 100%;
