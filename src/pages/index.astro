@@ -51,16 +51,16 @@ import Layout from '../layouts/Layout.astro';
           iconPosition="46% 50%"
           iconSize="35%"
         />
-        <p class="uppercase text-white text-sm">You picked</p>
+        <p class="uppercase text-white text-sm tracking-[0.08rem]">You picked</p>
       </div>
       <div class="flex flex-col items-center justify-between h-[9.83rem]">
         <span
           class="mt-[0.6rem] h-[6.1rem] w-[6.1rem] rounded-full bg-black bg-opacity-10"
         ></span>
-        <p class="uppercase text-white text-sm">The house picked</p>
+        <p class="uppercase text-white text-sm tracking-[0.08rem]">The house picked</p>
       </div>
     </div> -->
-    <div
+    <!-- <div
       data-step
       class="h-[27.3rem] flex justify-around w-full relative pt-[3.68rem]"
     >
@@ -72,7 +72,7 @@ import Layout from '../layouts/Layout.astro';
           iconPosition="46% 50%"
           iconSize="35%"
         />
-        <p class="uppercase text-white text-sm">You picked</p>
+        <p class="uppercase text-white text-sm tracking-[0.08rem]">You picked</p>
       </div>
       <div class="flex flex-col items-center justify-between h-[9.83rem]">
         <ChoiceButton
@@ -82,8 +82,47 @@ import Layout from '../layouts/Layout.astro';
           iconSize="30%"
           iconPosition="52% 50%"
         />
-        <p class="uppercase text-white text-sm">The house picked</p>
+        <p class="uppercase text-white text-sm tracking-[0.08rem]">The house picked</p>
       </div>
+    </div> -->
+    <div
+      data-step
+      class="h-[16.85rem] flex justify-around w-full relative pt-[3.68rem]"
+    >
+      <div class="flex flex-col items-center justify-between h-[9.83rem]">
+        <ChoiceButton
+          color="purple"
+          icon="lizard"
+          class="h-[7.44rem] w-[7.44rem]"
+          iconSize="43%"
+        />
+        <p class="uppercase text-white text-sm tracking-[0.08rem]">
+          You picked
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-between h-[9.83rem]">
+        <ChoiceButton
+          color="cyan"
+          icon="spock"
+          class="h-[7.44rem] w-[7.44rem]"
+          iconSize="30%"
+          iconPosition="52% 50%"
+        />
+        <p class="uppercase text-white text-sm tracking-[0.08rem]">
+          The house picked
+        </p>
+      </div>
+    </div>
+    <div class="h-[10.55rem] flex flex-col items-center">
+      <h2
+        class="uppercase text-white text-[3.1rem] font-bold tracking-[0.03rem]"
+      >
+        You Win
+      </h2>
+      <button
+        class="uppercase bg-white text-dark-text mt-[0.35rem] h-[2.65rem] rounded-lg w-[12.1rem] tracking-[0.08rem]"
+        >Play again</button
+      >
     </div>
   </div>
 </Layout>
