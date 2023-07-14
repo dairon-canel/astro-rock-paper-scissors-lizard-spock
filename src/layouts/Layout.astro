@@ -19,26 +19,33 @@ const { title } = Astro.props;
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="flex flex-col h-fit">
+  <body class="relative flex flex-col h-screen">
     <ScoreHeader class="m-7" />
     <slot />
-    <a
+    <button
+      id="rules-display"
       class="text-white border-2 pt-[0.4rem] pb-[0.3rem] border-header-outline uppercase self-center mb-[3.1rem] rounded-lg tracking-[0.06rem] px-[2rem]"
-      >Rules</a
+      >Rules</button
     >
+    <!-- <div id="rules" class="bg-white absolute w-full h-full">
+      <img src="/images/image-rules-bonus.svg" alt="" />
+    </div> -->
   </body>
 </html>
 <style is:global>
+  @font-face {
+    font-family: 'BarlowSemiCondensed-Bold';
+    src: url(/fonts/BarlowSemiCondensed-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: 'BarlowSemiCondensed-SemiBold';
+    src: url(/fonts/BarlowSemiCondensed-SemiBold.ttf);
+  }
   /* css reset from https://www.joshwcomeau.com/css/custom-css-reset/ */
 
   /*
@@ -128,7 +135,9 @@ const { title } = Astro.props;
       hsl(237, 49%, 15%)
     );
 
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: 'BarlowSemiCondensed-SemiBold', system-ui, -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
   }
 
@@ -138,3 +147,5 @@ const { title } = Astro.props;
     background: var(--radial-gradient);
   }
 </style>
+
+<script></script>
