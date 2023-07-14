@@ -1,4 +1,5 @@
 ---
+import Rules from '../components/Rules.astro';
 import ScoreHeader from '../components/ScoreHeader.astro';
 
 export interface Props {
@@ -27,13 +28,14 @@ const { title } = Astro.props;
     <ScoreHeader class="m-7" />
     <slot />
     <button
-      id="rules-display"
+      id="rules-button"
       class="text-white border-2 pt-[0.4rem] pb-[0.3rem] border-header-outline uppercase self-center mb-[3.1rem] rounded-lg tracking-[0.06rem] px-[2rem]"
       >Rules</button
     >
-    <!-- <div id="rules" class="bg-white absolute w-full h-full">
-      <img src="/images/image-rules-bonus.svg" alt="" />
-    </div> -->
+    <div id="rules-section" class="bg-white absolute w-full h-full hidden">
+      <Rules />
+      <button id="close-button" class="w-10 h-10"></button>
+    </div>
   </body>
 </html>
 <style is:global>
@@ -146,6 +148,22 @@ const { title } = Astro.props;
     height: 100vh;
     background: var(--radial-gradient);
   }
+
+  #close-button {
+    background-image: url(/images/icon-close.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 </style>
 
-<script></script>
+<script>
+  const rulesButton = document.getElementById('rules-button');
+  const rulesSection = document.getElementById('rules-section');
+  const closeButton = document.getElementById('close-button');
+
+  const toggleSection = () => rulesSection?.classList.toggle('hidden');
+
+  rulesButton?.addEventListener('click', toggleSection);
+
+  closeButton?.addEventListener('click', toggleSection);
+</script>
