@@ -161,7 +161,13 @@ const { title } = Astro.props;
   const rulesSection = document.getElementById('rules-section');
   const closeButton = document.getElementById('close-button');
 
-  const toggleSection = () => rulesSection?.classList.toggle('hidden');
+  const toggleSection = () => {
+    rulesSection?.classList.toggle('hidden');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   rulesButton?.addEventListener('click', toggleSection);
 
