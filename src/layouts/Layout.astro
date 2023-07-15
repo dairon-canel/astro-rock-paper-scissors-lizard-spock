@@ -32,9 +32,13 @@ const { title } = Astro.props;
       class="text-white border-2 pt-[0.4rem] pb-[0.3rem] border-header-outline uppercase self-center mb-[3.1rem] rounded-lg tracking-[0.06rem] px-[2rem]"
       >Rules</button
     >
-    <div id="rules-section" class="bg-white absolute w-full h-full hidden">
+    <div
+      id="rules-section"
+      class="bg-white flex-col items-center justify-between absolute w-full h-full pt-[5.1rem] pb-[3.7rem] hidden"
+    >
+      <h2 class="uppercase text-3xl text-dark-text">Rules</h2>
       <Rules />
-      <button id="close-button" class="w-10 h-10"></button>
+      <button id="close-button" class="w-4 h-4"></button>
     </div>
   </body>
 </html>
@@ -149,6 +153,10 @@ const { title } = Astro.props;
     background: var(--radial-gradient);
   }
 
+  h2 {
+    font-family: 'BarlowSemiCondensed-Bold';
+  }
+
   #close-button {
     background-image: url(/images/icon-close.svg);
     background-repeat: no-repeat;
@@ -163,6 +171,7 @@ const { title } = Astro.props;
 
   const toggleSection = () => {
     rulesSection?.classList.toggle('hidden');
+    rulesSection?.classList.toggle('flex');
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
