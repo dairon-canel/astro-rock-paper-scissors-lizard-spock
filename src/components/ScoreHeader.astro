@@ -5,22 +5,26 @@ const { class: className } = Astro.props;
 <div
   class:list={[
     className,
-    'h-[5.4rem] pl-[1.1rem] pr-[0.5rem] border-[0.2rem] flex justify-between items-center rounded-lg border-header-outline',
+    'h-[5.4rem] pl-[1.1rem] pr-[0.5rem] border-[0.2rem] flex justify-between items-center rounded-lg border-header-outline lg:h-[8.5rem] lg:pl-[1.8rem] lg:pr-[1.3rem]',
   ]}
 >
   <img
     src="/images/logo-bonus.svg"
     alt="rock paper scissors lizard spock title"
-    class="h-[2.8rem]"
+    class="h-[2.8rem] lg:h-[6.29rem] lg:mt-[0.5rem]"
   />
   <div
-    class="bg-white flex w-[4.4rem] flex-col items-center h-[3.9rem] rounded-md"
+    class="bg-white drop-shadow-md flex w-[4.4rem] flex-col items-center h-[3.9rem] rounded-md lg:w-[8.3rem] lg:h-[6.3rem]"
   >
     <p
-      class="text-[0.6rem] tracking-[0.04rem] font-bold mt-[0.4rem] uppercase text-score-text"
+      class="text-[0.6rem] tracking-[0.04rem] font-bold mt-[0.4rem] uppercase text-score-text lg:mt-[0.65rem] lg:text-[1rem]"
     >
       score
     </p>
-    <p class="-mt-[0.65rem] text-[2.2rem] font-bold text-dark-text">12</p>
+    <p
+      class="-mt-[0.65rem] text-[2.2rem] font-bold text-dark-text lg:text-[3.5rem] lg:-mt-[1rem]"
+    >
+      12
+    </p>
   </div>
 </div>
