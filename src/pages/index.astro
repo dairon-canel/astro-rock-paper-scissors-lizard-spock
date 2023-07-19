@@ -4,13 +4,16 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Frontend Mentor | Rock paper scissors lizard spock">
-  <div data-multi-step>
-    <div data-step class="bg-image h-[27.3rem] w-full relative">
+  <div data-multi-step class="grid">
+    <div
+      data-step
+      class="bg-image h-[27.3rem] w-[13rem] lg:w-[25rem] place-self-center relative"
+    >
       <!-- iconPosition="46% 50%" iconSize="" mobile -->
       <ChoiceButton
         color="yellow"
         icon="scissors"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[3.5rem] left-[7.8rem] lg:left-[33.9rem] lg:top-[0.8rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[3.5rem] left-[3.85rem] lg:left-[8.7rem] lg:top-[1rem] lg:h-[8.2rem] lg:w-[8.2rem]"
         iconPosition="48% 51%"
         iconSize="50px"
       />
@@ -18,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
       <ChoiceButton
         color="blue"
         icon="paper"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] left-[13.75rem] lg:left-[42.9rem] lg:top-[8rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] left-[9.8rem] lg:left-[17.5rem] lg:top-[8.2rem] lg:h-[8.2rem] lg:w-[8.2rem]"
         iconPosition="49% 51%"
         iconSize="48px"
       />
@@ -26,7 +29,7 @@ import Layout from '../layouts/Layout.astro';
       <ChoiceButton
         color="red"
         icon="rock"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[15.2rem] left-[11.35rem] lg:left-[39.3rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[15.1rem] left-[7.4rem] lg:left-[14rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
         iconPosition="50% 51%"
         iconSize="47px"
       />
@@ -34,14 +37,14 @@ import Layout from '../layouts/Layout.astro';
       <ChoiceButton
         color="purple"
         icon="lizard"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[15.2rem] left-[4.15rem] lg:left-[28.4rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[15.1rem] left-[0.25rem] lg:left-[3rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
         iconSize="64px"
       />
       <!-- iconPosition="52% 50%" iconSize="30px" mobile -->
       <ChoiceButton
         color="cyan"
         icon="spock"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] left-[1.75rem] lg:left-[24.8rem] lg:top-[8rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] -left-[2.15rem] lg:-left-[0.4rem] lg:top-[8.2rem] lg:h-[8.2rem] lg:w-[8.2rem]"
         iconSize="44px"
         iconPosition="52% 49%"
       />
