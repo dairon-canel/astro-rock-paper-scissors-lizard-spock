@@ -34,11 +34,22 @@ const { title } = Astro.props;
     >
     <div
       id="rules-section"
-      class="bg-white z-20 flex-col items-center justify-between absolute w-full h-full pt-[5.1rem] pb-[3.7rem] hidden"
+      class="flex absolute w-full h-full bg-black bg-opacity-70 z-20 justify-center items-center"
     >
-      <h2 class="uppercase text-3xl text-dark-text">Rules</h2>
-      <Rules />
-      <button id="close-button" class="w-4 h-4"></button>
+      <div
+        class="bg-white relative opacity-100 flex flex-col justify-between pt-[5.1rem] w-full h-full items-center pb-[3.7rem] lg:w-[22.2rem] lg:h-[25.3rem] lg:rounded-lg lg:pt-[1.6rem] lg:pb-[2.3rem]"
+      >
+        <h2
+          class="uppercase text-3xl text-dark-text lg:place-self-start lg:ml-[1.7rem]"
+        >
+          Rules
+        </h2>
+        <Rules />
+        <button
+          id="close-button"
+          class="w-4 h-4 lg:absolute lg:top-[2.2rem] lg:right-[1.8rem]"
+        ></button>
+      </div>
     </div>
   </body>
 </html>
@@ -171,7 +182,6 @@ const { title } = Astro.props;
 
   const toggleSection = () => {
     rulesSection?.classList.toggle('hidden');
-    rulesSection?.classList.toggle('flex');
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
