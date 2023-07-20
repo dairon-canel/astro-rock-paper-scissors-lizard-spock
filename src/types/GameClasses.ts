@@ -1,12 +1,19 @@
-class Action {
-  constructor(
-    private name: string,
-    private defeats: string[],
-    private defeatedBy: string[],
-  ) {}
+export class Action {
+  private defeats: string[] = [];
+  private defeatedBy: string[] = [];
+
+  constructor(private name: string) {}
 
   getName(): string {
     return this.name;
+  }
+
+  setDefeats(actions: Action[]) {
+    this.defeats = actions.map(e => e.getName());
+  }
+
+  setDefeatedBy(actions: Action[]) {
+    this.defeatedBy = actions.map(e => e.getName());
   }
 
   defeatsAction(action: Action) {
@@ -18,7 +25,7 @@ class Action {
   }
 }
 
-class Player {
+export class Player {
   constructor(
     private name: string,
     private selectedAction: Action,
@@ -46,7 +53,7 @@ class Player {
   }
 }
 
-class Game {
+export class Game {
   constructor(
     private player1: Player,
     private player2: Player,

@@ -1,6 +1,8 @@
 ---
 import ChoiceButton from '../components/ChoiceButton.astro';
 import Layout from '../layouts/Layout.astro';
+
+const state = 'start';
 ---
 
 <Layout title="Frontend Mentor | Rock paper scissors lizard spock">
@@ -10,164 +12,140 @@ import Layout from '../layouts/Layout.astro';
     <!-- red iconPosition="50% 51%" iconSize="" mobile -->
     <!-- purple iconPosition="" iconSize="41px" mobile -->
     <!-- cyan iconPosition="52% 50%" iconSize="30px" mobile -->
-    <!-- <div
-      data-step
-      class="bg-image h-[27.3rem] w-[13rem] lg:w-[25rem] place-self-center relative"
-    >
-      <ChoiceButton
-        color="yellow"
-        icon="scissors"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[3.5rem] left-[3.85rem] lg:left-[8.7rem] lg:top-[1rem] lg:h-[8.2rem] lg:w-[8.2rem]"
-        iconPosition="48% 51%"
-        iconSize="50px"
-      />
-      <ChoiceButton
-        color="blue"
-        icon="paper"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] left-[9.8rem] lg:left-[17.5rem] lg:top-[8.2rem] lg:h-[8.2rem] lg:w-[8.2rem]"
-        iconPosition="49% 51%"
-        iconSize="48px"
-      />
-      <ChoiceButton
-        color="red"
-        icon="rock"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[15.1rem] left-[7.4rem] lg:left-[14rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
-        iconPosition="50% 51%"
-        iconSize="47px"
-      />
-      <ChoiceButton
-        color="purple"
-        icon="lizard"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[15.1rem] left-[0.25rem] lg:left-[3rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
-        iconSize="64px"
-      />
-      <ChoiceButton
-        color="cyan"
-        icon="spock"
-        class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] -left-[2.15rem] lg:-left-[0.4rem] lg:top-[8.2rem] lg:h-[8.2rem] lg:w-[8.2rem]"
-        iconSize="44px"
-        iconPosition="52% 49%"
-      />
-    </div> -->
-    <!-- <div
-      data-step
-      class="h-[27.3rem] flex justify-between w-full lg:w-[38rem] place-self-center relative pt-[3.68rem] lg:pt-[2.45rem] lg:pr-[3rem]"
-    >
-      <div
-        class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]"
-      >
-        <ChoiceButton
-          color="yellow"
-          icon="scissors"
-          class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
-          iconPosition="46% 50%"
-          iconSize="35%"
-        />
-        <p
-          class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]"
+    {
+      state === 'start' ? (
+        <div
+          data-step
+          class="bg-image h-[27.3rem] w-[13rem] lg:w-[25rem] place-self-center relative"
         >
-          You picked
-        </p>
-      </div>
-      <div
-        class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[19.45rem]"
-      >
-        <span
-          class="mt-[0.6rem] h-[6.1rem] w-[6.1rem] rounded-full bg-black bg-opacity-10 lg:h-[12.7rem] lg:w-[12.7rem]"
-        ></span>
-        <p
-          class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]"
+          <ChoiceButton
+            color="yellow"
+            icon="scissors"
+            class="absolute h-[5.35rem] w-[5.35rem] top-[3.5rem] left-[3.85rem] lg:left-[8.7rem] lg:top-[1rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+            iconPosition="48% 51%"
+            iconSize="50px"
+          />
+          <ChoiceButton
+            color="blue"
+            icon="paper"
+            class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] left-[9.8rem] lg:left-[17.5rem] lg:top-[8.2rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+            iconPosition="49% 51%"
+            iconSize="48px"
+          />
+          <ChoiceButton
+            color="red"
+            icon="rock"
+            class="absolute h-[5.35rem] w-[5.35rem] top-[15.1rem] left-[7.4rem] lg:left-[14rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+            iconPosition="50% 51%"
+            iconSize="47px"
+          />
+          <ChoiceButton
+            color="purple"
+            icon="lizard"
+            class="absolute h-[5.35rem] w-[5.35rem] top-[15.1rem] left-[0.25rem] lg:left-[3rem] lg:top-[18.4rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+            iconSize="64px"
+          />
+          <ChoiceButton
+            color="cyan"
+            icon="spock"
+            class="absolute h-[5.35rem] w-[5.35rem] top-[8.3rem] -left-[2.15rem] lg:-left-[0.4rem] lg:top-[8.2rem] lg:h-[8.2rem] lg:w-[8.2rem]"
+            iconSize="44px"
+            iconPosition="52% 49%"
+          />
+        </div>
+      ) : state === 'player_one_turn' ? (
+        <div
+          data-step
+          class="h-[27.3rem] flex justify-between w-full lg:w-[38rem] place-self-center relative pt-[3.68rem] lg:pt-[2.45rem] lg:pr-[3rem]"
         >
-          The house picked
-        </p>
-      </div>
-    </div> -->
-    <!-- <div
-      data-step
-      class="h-[27.3rem] flex justify-between w-full lg:w-[38rem] place-self-center relative pt-[3.68rem] lg:pt-[2.45rem] lg:pr-[0.9rem]"
-    >
-      <div
-        class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]"
-      >
-        <ChoiceButton
-          color="yellow"
-          icon="scissors"
-          class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
-          iconPosition="46% 50%"
-          iconSize="35%"
-        />
-        <p
-          class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]"
+          <div class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]">
+            <ChoiceButton
+              color="yellow"
+              icon="scissors"
+              class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
+              iconPosition="46% 50%"
+              iconSize="35%"
+            />
+            <p class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]">
+              You picked
+            </p>
+          </div>
+          <div class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[19.45rem]">
+            <span class="mt-[0.6rem] h-[6.1rem] w-[6.1rem] rounded-full bg-black bg-opacity-10 lg:h-[12.7rem] lg:w-[12.7rem]" />
+            <p class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]">
+              The house picked
+            </p>
+          </div>
+        </div>
+      ) : state === 'player_two_turn' ? (
+        <div
+          data-step
+          class="h-[27.3rem] flex justify-between w-full lg:w-[38rem] place-self-center relative pt-[3.68rem] lg:pt-[2.45rem] lg:pr-[0.9rem]"
         >
-          You picked
-        </p>
-      </div>
-      <div
-        class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]"
-      >
-        <ChoiceButton
-          color="cyan"
-          icon="spock"
-          class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
-          iconSize="30%"
-          iconPosition="52% 50%"
-        />
-        <p
-          class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]"
+          <div class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]">
+            <ChoiceButton
+              color="yellow"
+              icon="scissors"
+              class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
+              iconPosition="46% 50%"
+              iconSize="35%"
+            />
+            <p class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]">
+              You picked
+            </p>
+          </div>
+          <div class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]">
+            <ChoiceButton
+              color="cyan"
+              icon="spock"
+              class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
+              iconSize="30%"
+              iconPosition="52% 50%"
+            />
+            <p class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]">
+              The house picked
+            </p>
+          </div>
+        </div>
+      ) : state === 'game_over' ? (
+        <div
+          data-step
+          class="grid h-[27.3rem] lg:flex lg:justify-between w-full lg:w-[53.3rem] place-self-center relative pt-[3.68rem] lg:pt-[2.45rem] lg:pr-[0.9rem] items-center"
         >
-          The house picked
-        </p>
-      </div>
-    </div> -->
-    <div
-      data-step
-      class="grid h-[27.3rem] lg:flex lg:justify-between w-full lg:w-[53.3rem] place-self-center relative pt-[3.68rem] lg:pt-[2.45rem] lg:pr-[0.9rem] items-center"
-    >
-      <div
-        class="flex flex-col items-center col-start-1 col-end-2 row-start-1 row-end-2 justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]"
-      >
-        <ChoiceButton
-          color="purple"
-          icon="lizard"
-          class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
-          iconSize="43%"
-        />
-        <p
-          class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]"
-        >
-          You picked
-        </p>
-      </div>
-      <div
-        class="h-[10.55rem] flex flex-col items-center col-start-1 col-end-3 row-start-2 row-end-3"
-      >
-        <h2
-          class="uppercase text-white text-[3.1rem] font-bold tracking-[0.03rem]"
-        >
-          You Win
-        </h2>
-        <button
-          class="uppercase bg-white text-dark-text mt-[0.35rem] h-[2.65rem] rounded-lg w-[12.1rem] tracking-[0.08rem]"
-          >Play again</button
-        >
-      </div>
-      <div
-        class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem] col-start-2 col-end-3 row-start-1 row-end-2"
-      >
-        <ChoiceButton
-          color="cyan"
-          icon="spock"
-          class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
-          iconSize="30%"
-          iconPosition="52% 50%"
-        />
-        <p
-          class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]"
-        >
-          The house picked
-        </p>
-      </div>
-    </div>
+          <div class="flex flex-col items-center col-start-1 col-end-2 row-start-1 row-end-2 justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem]">
+            <ChoiceButton
+              color="purple"
+              icon="lizard"
+              class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
+              iconSize="43%"
+            />
+            <p class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]">
+              You picked
+            </p>
+          </div>
+          <div class="h-[10.55rem] flex flex-col items-center col-start-1 col-end-3 row-start-2 row-end-3">
+            <h2 class="uppercase text-white text-[3.1rem] font-bold tracking-[0.03rem]">
+              You Win
+            </h2>
+            <button class="uppercase bg-white text-dark-text mt-[0.35rem] h-[2.65rem] rounded-lg w-[12.1rem] tracking-[0.08rem]">
+              Play again
+            </button>
+          </div>
+          <div class="flex flex-col items-center justify-between h-[9.83rem] lg:flex-col-reverse lg:h-[21.65rem] col-start-2 col-end-3 row-start-1 row-end-2">
+            <ChoiceButton
+              color="cyan"
+              icon="spock"
+              class="h-[7.44rem] w-[7.44rem] lg:h-[16.65rem] lg:w-[16.65rem]"
+              iconSize="30%"
+              iconPosition="52% 50%"
+            />
+            <p class="uppercase text-white text-sm tracking-[0.08rem] lg:text-[1.5rem]">
+              The house picked
+            </p>
+          </div>
+        </div>
+      ) : null
+    }
   </div>
 </Layout>
 
