@@ -26,11 +26,10 @@ export class Action {
 }
 
 export class Player {
-  constructor(
-    private name: string,
-    private selectedAction: Action,
-    private score: number = 0,
-  ) {}
+  private selectedAction: Action | undefined;
+  private score: number = 0;
+
+  constructor(private name: string) {}
 
   getName() {
     return this.name;
@@ -54,11 +53,21 @@ export class Player {
 }
 
 export class Game {
+  private gameState: 'start' | 'selection' | 'result' = 'start';
+
   constructor(
     private player1: Player,
     private player2: Player,
     private actions: Action[],
   ) {}
+
+  startGame() {
+    this.gameState = 'start';
+  }
+
+  getGameState() {
+    return this.gameState;
+  }
 
   playRound() {
     this.player1.chooseAction(this.getRandomAction());
@@ -76,7 +85,7 @@ export class Game {
       return;
     }
 
-    if (action1.defeatsAction(action2)) {
+    if (action1?.defeatsAction(action2 as Action)) {
       console.log(`${this.player1.getName()} wins!`);
       this.player1.increaseScore();
     } else {
